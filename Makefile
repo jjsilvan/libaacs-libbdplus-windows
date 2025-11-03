@@ -7,8 +7,8 @@
 # Default is to build both architectures
 all: 32 64
 
-check-deps:
-	@which fig2dev > /dev/null || (echo 'Error: fig2dev must be installed' && exit 1)
+#check-deps:
+#	@which fig2dev > /dev/null || (echo 'Error: fig2dev must be installed' && exit 1)
 
 # 32-bit Windows build
 32: check-deps
@@ -25,10 +25,10 @@ check-deps:
 	@echo 'Building for 64bit Windows'
 	@mkdir -p build-libaacs
 	@cd build-libaacs && $(MAKE) -f ../Makefile build-internal \
-		LIBAACS_GCC=x86_64-w64-mingw32-gcc \
-		LIBAACS_MINGW_HOST=x86_64-w64-mingw32 \
+		LIBAACS_GCC=aarch64-w64-mingw32-gcc \
+		LIBAACS_MINGW_HOST=aarch64-w64-mingw32 \
 		LIBAACS_ARCH=x86-64 \
-		MINGW_STRIP_TOOL=x86_64-w64-mingw32-strip
+		MINGW_STRIP_TOOL=aarch64-w64-mingw32-strip
 
 build-internal:
 	@mkdir -p install

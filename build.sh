@@ -20,10 +20,10 @@ else
   [ "$r_set" ] && rm -rf build-libaacs
   mkdir build-libaacs
   cd build-libaacs || exit
-  export LIBAACS_GCC=x86_64-w64-mingw32-gcc
-  export LIBAACS_MINGW_HOST=x86_64-w64-mingw32
+  export LIBAACS_GCC=aarch64-w64-mingw32-gcc
+  export LIBAACS_MINGW_HOST=aarch64-w64-mingw32
   export LIBAACS_ARCH=x86-64
-  export MINGW_STRIP_TOOL=x86_64-w64-mingw32-strip
+  export MINGW_STRIP_TOOL=aarch64-w64-mingw32-strip
 fi
 mkdir install
 which fig2dev &> /dev/null || (echo 'fig2dev must be installed' && exit)
